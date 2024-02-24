@@ -10,7 +10,7 @@ Yes, there likely **are** libraries to create and manipulate buffers, although p
 
 # Usage
 
-As said just earlier, you describe the structure of a buffer
+As said earlier, you describe the structure of a buffer
 
 ```lua
 local packeteer = require(path.to.packeteer)
@@ -21,7 +21,7 @@ local person_packet = packeteer.describe({
 })
 ```
 
-and use a function to serialize / deserialize
+and use a function to serialize / deserialize it.
 
 ```lua
 local serialized = person_packet.serialize({
@@ -39,4 +39,5 @@ local deserialized = person_packet.deserialize(serialized)
 > Buffers can be safely stored in `DataStore`s, and safely transmitted over `RemoteEvent`s.
 
 > [!NOTE]\
-> `packet.deserialize()` takes in any buffer - you can pass it any buffer, and as long as it's valid, it'll spit out correct data.
+> `packet.deserialize()` takes in any buffer.
+> You can pass it any buffer, and as long as it's valid, it'll spit out correct data.
