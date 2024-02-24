@@ -8,6 +8,17 @@ Packeteer was created due to there not being any lightweight libraries out there
 Yes, there likely **are** libraries to create and manipulate buffers, although packeteer is as of it's making the only one available that does what it does -\
 \- in packeteer, you define the structure of a buffer and simply call a function to serialize / deserialize - both of which provide full types for the structure.
 
+# Installation
+
+1. Add packeteer to your `wally.toml`
+
+```toml
+[dependencies]
+packeteer = "studio-delusion/packeteer@latest" # Replace latest with the current version
+```
+
+2. Run `wally install`
+
 # Usage
 
 As said earlier, you describe the structure of a buffer
