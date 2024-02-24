@@ -1,0 +1,26 @@
+{
+    "name": "packeteer",
+    "tree": {
+        "$className": "DataModel",
+
+        "ServerScriptService": {
+            "$path": "test/server"
+        },
+
+        "ReplicatedStorage": {
+            "Packages": {
+                "$className": "Folder",
+                "packeteer": {
+                    "$path": "lib"
+                }
+            },
+            "$path": "test/shared"
+        },
+
+        "StarterPlayer": {
+            "StarterPlayerScripts": {
+                "$path": "test/client"
+            }
+        }
+    }
+}

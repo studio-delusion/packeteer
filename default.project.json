@@ -1,0 +1,6 @@
+{
+    "name": "packeteer",
+    "tree": {
+        "$path": "lib"
+    }
+}
