@@ -30,6 +30,7 @@ export type Packeteer = {
 	boolean: boolean,
 	string: string,
 	vector3: Vector3,
+	buffer: buffer,
 
 	optional: <T>(value: T) -> T?,
 	array: <T>(value: T) -> { T },

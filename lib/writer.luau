@@ -79,6 +79,10 @@ function writer.bfalse()
 	cursor += 1
 end
 
+function writer.buffer(to_copy: buffer)
+	buffer.copy(buff, cursor, to_copy, 0)
+end
+
 function writer.load(data: t.WriterData)
 	if current == data then
 		return

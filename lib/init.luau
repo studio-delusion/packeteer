@@ -20,6 +20,7 @@ local array = require(data_types.array)
 local struct = require(data_types.struct)
 local optional = require(data_types.optional)
 local vector3 = require(data_types.vector3)
+local buff = require(data_types.buffer)
 
 local packet = require(script.packet)
 
@@ -38,6 +39,7 @@ return (
 		boolean = boolean,
 		string = str,
 		vector3 = vector3,
+		buffer = buff,
 
 		optional = optional,
 		array = array,
