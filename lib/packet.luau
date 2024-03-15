@@ -10,7 +10,7 @@ return function(definition)
 
 	function packet.serialize(value): buffer
 		writer.load({
-			buff = buffer.create(0),
+			buff = buffer.create(5),
 			size = 0,
 			cursor = 0,
 		})

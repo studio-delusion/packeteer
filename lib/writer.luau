@@ -9,11 +9,16 @@ local cursor: number = nil
 local buff: buffer = nil
 
 local function alloc(bytes: number)
+	print(size)
 	if cursor + bytes < size then
 		return
 	end
 
-	size += bytes
+	size = math.round(size * 1.5)
+	if cursor + bytes > size then
+		size += bytes
+	end
+
 	local new_buffer = buffer.create(size)
 	buffer.copy(new_buffer, 0, buff)
 
