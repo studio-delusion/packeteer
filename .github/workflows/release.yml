@@ -46,6 +46,7 @@ jobs:
                       Packeteer ${{ github.ref }} is now available!
                   files: |
                       packeteer.rbxm
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
     publish:
         name: Publish
