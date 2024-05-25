@@ -43,9 +43,9 @@ jobs:
             - name: Create Release
               uses: softprops/action-gh-release@v2
               with:
-                  name: Packeteer ${{ github.ref }}
+                  name: Packeteer ${{ github.ref_name }}
                   body: |
-                      Packeteer ${{ github.ref }} is now available!
+                      Packeteer ${{ github.ref_name }} is now available!
                   files: |
                       packeteer.rbxm
                   token: ${{ secrets.GITHUB_TOKEN }}
