@@ -15,7 +15,7 @@ jobs:
             - name: Install Aftman
               uses: ok-nick/setup-aftman@v0.3.0
 
-            - name: Build Matter
+            - name: Build Packeteer
               run: rojo build -vvvv -o packeteer.rbxm default.project.json
 
             - name: Upload Build Artifact

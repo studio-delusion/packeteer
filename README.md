@@ -23,7 +23,7 @@ Describe your buffer
 local packteer = require(?)
 
 local person = packteer.describe({
-    name = packeteer.string,
+    name = packeteer.string(20),
     age = packeteer.u8,
 })
 ```
