@@ -19,7 +19,7 @@ jobs:
               run: rojo build -vvvv -o packeteer.rbxm default.project.json
 
             - name: Upload Build Artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: packeteer
                   path: packeteer.rbxm
