@@ -489,8 +489,7 @@ local function define(definition)
 		write(value)
 		save_channel()
 
-		local dump = dump_channel(channel)
-		assert(dump, "Expected serialized buffer to not be empty")
+		local dump = dump_channel(channel) :: any
 		return dump
 	end
 
