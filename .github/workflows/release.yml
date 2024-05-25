@@ -1,0 +1,62 @@
+name: Release
+
+on:
+    push:
+        tags: ["v*"]
+
+jobs:
+    build-packeteer:
+        name: Build Packeteer
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Project
+              uses: actions/checkout@v3
+
+            - name: Install Aftman
+              uses: ok-nick/setup-aftman@v0.3.0
+
+            - name: Build Matter
+              run: rojo build -vvvv -o packeteer.rbxm default.project.json
+
+            - name: Upload Build Artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: packeteer
+                  path: packeteer.rbxm
+
+    release:
+        name: Release
+        needs: [build-packeteer]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Project
+              uses: actions/checkout@v3
+
+            - name: Download Packeteer Build
+              uses: actions/download-artifact@v3
+              with:
+                  name: packeteer
+                  path: packeteer.rbxm
+
+            - name: Create Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  name: Packeteer ${{ github.ref }}
+                  body: |
+                      Packeteer ${{ github.ref }} is now available!
+                  files: |
+                      packeteer.rbxm
+
+    publish:
+        name: Publish
+        needs: [release]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Project
+              uses: actions/checkout@v3
+
+            - name: Install Aftman
+              uses: ok-nick/setup-aftman@v0.3.0
+
+            - name: Publish Packeteer
+              run: wally publish --token ${{ secrets.WALLY_TOKEN }}
