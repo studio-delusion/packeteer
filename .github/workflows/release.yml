@@ -10,10 +10,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Project
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Install Aftman
-              uses: ok-nick/setup-aftman@v0.3.0
+              uses: ok-nick/setup-aftman@v0.4.2
 
             - name: Build Packeteer
               run: rojo build -vvvv -o packeteer.rbxm default.project.json
@@ -30,16 +30,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Project
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Download Packeteer Build
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                   name: packeteer
                   path: packeteer.rbxm
 
             - name: Create Release
-              uses: softprops/action-gh-release@v1
+              uses: softprops/action-gh-release@v2
               with:
                   name: Packeteer ${{ github.ref }}
                   body: |
@@ -53,10 +53,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Project
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Install Aftman
-              uses: ok-nick/setup-aftman@v0.3.0
+              uses: ok-nick/setup-aftman@v0.4.2
 
             - name: Publish Packeteer
               run: wally publish --token ${{ secrets.WALLY_TOKEN }}
