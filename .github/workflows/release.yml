@@ -61,5 +61,8 @@ jobs:
             - name: Install Aftman
               uses: ok-nick/setup-aftman@v0.4.2
 
+            - name: Login into Wally
+              run: wally login --token ${{ secrets.WALLY_TOKEN }}
+
             - name: Publish Packeteer
-              run: wally publish --token ${{ secrets.WALLY_TOKEN }}
+              run: wally publish
